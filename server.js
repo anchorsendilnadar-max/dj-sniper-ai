@@ -11,8 +11,7 @@ const app = express();
 app.use(express.json({ limit: "1mb" }));
 
 const PORT = Number(process.env.PORT || 3000);
-const MODEL = process.env.REPLICATE_MODEL || "fishaudio/ace-step-1.5";
-
+const MODEL = process.env.REPLICATE_MODEL || "fishaudio/ace-step-1.5:74e3a7d383b18815e277de5223f5fe9d53d38832de15aa567fe729fa129d0d85";
 if (!process.env.REPLICATE_API_TOKEN) {
   console.warn("WARNING: REPLICATE_API_TOKEN is not set. /api/generate will return an error until it is configured.");
 }
