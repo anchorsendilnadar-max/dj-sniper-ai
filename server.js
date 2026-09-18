@@ -104,7 +104,7 @@ app.post("/api/generate", async (req, res) => {
 });
 
 app.use(express.static(path.join(__dirname, "public")));
-app.get("*", (_req, res) => {
+app.get("/{*splat}", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
